@@ -1,0 +1,58 @@
+<! DOCTYPE html>
+<Html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(dibujarPie);
+      function dibujarPie() {
+
+        var tabla= google.visualization.arrayToDataTable(
+	[
+          ['Dato', 'Valor'],
+          ['IE6',5],
+          ['IE7',20],
+          ['IE8',75],
+          
+        ]
+	);
+
+        var grafica = new google.visualization.PieChart(document.getElementById('capaPieChart'));
+        grafica.draw(tabla);
+		
+      }
+	  
+	 function cambiarPie(){
+		  var tabla= google.visualization.arrayToDataTable(
+	[
+          ['Dato', 'Valor'],
+          ['IE6',50],
+          ['IE7',40],
+          ['IE8',10],
+          
+        ]
+	);
+
+        var graficaDos = new google.visualization.PieChart(document.getElementById('capaPieChart'));
+        graficaDos.draw(tabla);
+	 
+	 }
+	
+	
+    </script>
+
+
+  </head>
+
+<Body>
+
+<H1> Hola Mundo</ h1>
+<P> Olegario Mejia Acevedo. </ P>
+
+  <input type="submit" name="btnCambiar" id="btnCambiar" value="Cambiar" onClick="cambiarPie()" />
+  <input type="submit" name="btnVolver" id="btnVolver" value="Volver"onClick="dibujarPie()">
+<div id="capaPieChart" style="width: 700px; height: 500px;"></div>
+<form id="form1" name="form1" method="post" action="" >
+</form>
+</body>
+</html>
